@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Psi U House</title>
+  <meta name="description" content="Flip between a drone scan and the Revit model of the Psi Upsilon house.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23a32638'/><text x='16' y='24' font-size='22' text-anchor='middle' fill='%23d4ad4b' font-family='Georgia,serif'>Ψ</text></svg>">
+  <link rel="stylesheet" href="src/style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="view"></canvas>
+
+  <aside class="card help" id="help" aria-label="Controls">
+    <div class="help-head">
+      <h2>Controls</h2>
+      <button id="helpClose" class="icon" aria-label="Hide controls">×</button>
+    </div>
+    <dl class="mouse">
+      <dt>Left-drag</dt><dd>Orbit</dd>
+      <dt>Right-drag</dt><dd>Pan <span class="alt">(or Shift + drag)</span></dd>
+      <dt>Scroll</dt><dd>Zoom</dd>
+    </dl>
+    <dl class="touch">
+      <dt>1 finger</dt><dd>Orbit</dd>
+      <dt>2 fingers</dt><dd>Pan, pinch to zoom</dd>
+    </dl>
+    <dl class="keys">
+      <dt><kbd>Space</kbd></dt><dd>Flip scan / model</dd>
+      <dt><kbd>S</kbd></dt><dd>Swipe compare</dd>
+      <dt><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></dt><dd>Aerial / top / street</dd>
+      <dt><kbd>W</kbd></dt><dd>Transparent walls</dd>
+      <dt><kbd>R</kbd></dt><dd>Hide roof</dd>
+    </dl>
+  </aside>
+  <button id="helpOpen" class="card help-open" hidden aria-label="Show controls" title="Controls">?</button>
+
+  <!-- swipe mode overlay -->
+  <div id="swipe" hidden>
+    <div class="swipe-line"></div>
+    <button class="swipe-handle" aria-label="Drag to compare">⟷</button>
+    <span class="swipe-tag left">Scan</span>
+    <span class="swipe-tag right">Model</span>
+  </div>
+
+  <div class="card controls">
+    <div class="blend" id="blendRow">
+      <button class="end" data-to="0">Scan</button>
+      <input id="mix" type="range" min="0" max="1" step="0.001" value="0" aria-label="Blend between scan and model">
+      <button class="end" data-to="1">Model</button>
+    </div>
+    <div class="row">
+      <button id="flip" class="primary" title="Flip (Space)">Flip <kbd>Space</kbd></button>
+      <button id="swipeBtn" class="toggle" title="Split screen (S)">Swipe</button>
+      <span class="sep"></span>
+      <button class="view" data-view="aerial" title="1">Aerial</button>
+      <button class="view" data-view="top" title="2">Top</button>
+      <button class="view" data-view="street" title="3">Street</button>
+      <span class="sep"></span>
+      <button id="wallsBtn" class="toggle" aria-pressed="false" title="W">Transparent walls</button>
+      <button id="roofBtn" class="toggle" aria-pressed="false" title="R">Hide roof</button>
+    </div>
+  </div>
+
+  <div id="loading" class="card loading">
+    <div class="bar"><span id="loadBar"></span></div>
+    <p id="loadText">Loading…</p>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

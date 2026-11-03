@@ -1,0 +1,42 @@
+{
+  "description": "model: transform from model.glb (Revit coords, meters, Y-up) into viewer world - apply rotation.y then position. scan: 4x4 leveling matrix (column-major, three.js Matrix4.fromArray) applied to the point cloud and photo mesh. World origin is in pointcloud/meta.json.",
+  "model": {
+    "rotationY_rad": 0.001955262233800473,
+    "rotationY_deg": 0.11202827383808872,
+    "position": [
+      -0.6251058530439709,
+      4.756079064762953,
+      -7.786172661135201
+    ]
+  },
+  "scan": {
+    "matrix": [
+      0.9999862405489548,
+      0.005245317369495481,
+      -7.320151070894622e-05,
+      0.0,
+      -0.005245317369495481,
+      0.999596801962163,
+      -0.027905557738727108,
+      0.0,
+      -7.320151070894622e-05,
+      0.027905557738727108,
+      0.9996105614132083,
+      0.0,
+      0.06544871797581009,
+      0.19569599621803313,
+      0.3481930357581584,
+      1.0
+    ],
+    "tilt_deg": 1.6270894476898436
+  },
+  "fit": {
+    "median_dist_m": 0.5362389808870432,
+    "within_25cm": 0.35673333333333335,
+    "rms_visible_m": 0.09489253508988085,
+    "facade_along_m": -0.00017174482317738882,
+    "facade_edge_spread_m": 0.06584877253295977,
+    "facade_depth_m": -2.689172416313159e-05,
+    "facade_yaw_deg": 0.0009945223450206866
+  }
+}

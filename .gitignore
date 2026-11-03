@@ -1,0 +1,22 @@
+# --- Data -----------------------------------------------------------------
+# Raw exports from WebODM / Revit are large (~120 MB); only the processed,
+# web-ready files in assets/ get committed and deployed.
+data/raw/
+# intermediate files from the processing scripts
+data/work/
+
+# --- Tooling --------------------------------------------------------------
+node_modules/
+.venv/
+__pycache__/
+*.py[cod]
+npm-debug.log*
+*.log
+
+# --- OS / editor ----------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,21 @@
+{
+  "count": 3131423,
+  "chunk_size": 65536,
+  "bbox_min": [
+    -49.154,
+    -1.528,
+    -42.754
+  ],
+  "bbox_max": [
+    65.704,
+    20.197,
+    35.921
+  ],
+  "origin_utm": [
+    741527.0,
+    3740545.0,
+    231.3
+  ],
+  "crs": "EPSG:32616 (WGS 84 / UTM zone 16N)",
+  "axes": "X=east, Y=up, Z=-north (meters, relative to origin_utm)"
+}

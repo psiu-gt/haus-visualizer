@@ -1,0 +1,20 @@
+{
+  "name": "psiu-visualizer",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static site comparing a WebODM drone scan of the Psi Upsilon house with its Revit model.",
+  "type": "commonjs",
+  "scripts": {
+    "model": "node scripts/convert_model.mjs",
+    "serve": "npx --yes serve -l 8000 .",
+    "screenshot": "node scripts/screenshot.mjs"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^4.1.1",
+    "@gltf-transform/extensions": "^4.1.1",
+    "@gltf-transform/functions": "^4.1.1",
+    "meshoptimizer": "^0.22.0",
+    "puppeteer-core": "^23.11.1",
+    "three": "^0.170.0"
+  }
+}
