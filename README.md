@@ -1,5 +1,7 @@
 # Psi U House Visualizer
 
+https://psiu-gt.github.io/haus-visualizer/
+
 > [!CAUTION]
 > Slop alert: the viewer is entirely vibe-coded.
 
